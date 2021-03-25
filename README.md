@@ -28,4 +28,5 @@ lyricsgenius<p>
 spotipy<p>
   
 # To use it :
-Go to __init__.py and add your secret key and id available on the spotify site
+Go to __init__.py and add your secret key and id available on the spotify site <p>
+Go lstm_final.ipynb to see the details of the LSTM model and how the prediction is made
