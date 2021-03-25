@@ -26,3 +26,6 @@ flask<p>
 plotly<p>
 lyricsgenius<p>
 spotipy<p>
+  
+# To use it :
+Go to __init__.py and add your secret key and id available on the spotify site
