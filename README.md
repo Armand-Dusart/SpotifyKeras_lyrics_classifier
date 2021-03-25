@@ -3,11 +3,12 @@
 ![plot_look](/markdown_img/app_first_look.PNG)
 
 ## The project contains 2 parts:
--A graphical analysis of the evolution of words used by an artist over time.<p>
+# A graphical analysis of the evolution of words used by an artist over time.
 ![artist_look](/markdown_img/artist_first_look.PNG)<p>
 ![bar_look](/markdown_img/bar_graph.PNG)<p>
-![plot_look](/markdown_img/word_ev.PNG)<p>
--Prediction of the genre of the artist by his lyrics<p>
+![plot_look](/markdown_img/word_ev.PNG)
+  
+# Prediction of the genre of the artist by his lyrics
 ![lstm_look](/markdown_img/lstm_predict.PNG)<p>
 ## Technologies and APIs used : 
 <p>
