@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no" />
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>NLP Projet</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+                 
+                
+                
+                <link rel="icon" href="/static/images/logo_site.png" />
+
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+            
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <style>
+@font-face {
+	font-family: "Font From File";
+	src: url('static/fonts/RobotoSlab-Black.ttf');
+}
+
+body{
+    padding:0;
+    margin:0;
+    font-family:'Helvetica';
+    background-image: url("/static/images/fond.jpg");
+    background-size:100% 2404px;
+    background-repeat: repeat;
+}
+.content{
+    background-color:rgb(255, 255, 255);
+    border-radius:30px;
+    padding: 0px;
+    margin:50px 160px;
+ 
+
+}
+
+.sub {
+    background-color: rgb(36, 11, 105);
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  transition-duration: 0.4s;
+}
+
+.sub:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 6px 10px 0 rgba(0,0,0,0.19);
+}
+.sub:focus{
+    outline:none;
+}
+.opt_1, .opt_3{
+    background-color: rgb(255, 255, 255);
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 9px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px 20px 20px 20px;
+  transition-duration: 0.4s;
+  margin-top: 0;
+  box-shadow: 10px 2px 20px 0 rgba(0,0,0,0.19);
+  margin-left:310px;
+  margin-top:20px;
+  margin-bottom: 20px;
+  font-size:17px;
+}
+.opt_1:hover, .opt_3:hover{
+    background-color: rgb(36, 11, 105);
+    color: white;
+
+}
+
+.opt_1:focus, .opt_3:focus {
+    outline:none;
+    background-color: rgb(17, 24, 122);
+    color: white;
+    }
+
+.playlist{
+    display:block;
+    margin: 50px 50px;
+    padding-bottom: 50px;
+}
+.tuto_playlist{
+    max-width: 70%;
+    margin-left:160px;
+    margin-bottom:60px;
+    margin-top:60px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 6px 10px 0 rgba(0,0,0,0.19);
+}
+.artist{
+    display:"none";
+    margin-left:300px;
+    margin-top:90px;
+}
+
+.head{
+    background-color: rgb(15, 16, 26);
+    padding:20px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 6px 10px 0 rgba(0,0,0,0.19);
+    text-align: center;
+    font-size:40px;
+    color:rgb(214, 214, 214);
+    font-family: "Font from File";
+}
+.overl{
+    background-color: rgb(15, 16, 26);
+    border-radius: 0px 0px 20px 20px;
+    float:center;
+    margin-top:50px;
+}
+.logo{
+    margin-right: 30px;
+    margin-top: 15px;
+    max-width:5%;
+    padding-top:0px;
+    float: right;
+}
+.potichat{
+    max-width: 100%;
+    margin-left:160px;
+    margin-bottom:60px;
+    margin-top:60px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 6px 10px 0 rgba(0,0,0,0.19);
+}
+#gif{
+    display:none;
+    margin-left: 665px;
+    margin-top: 200px;
+    margin-bottom: 160px;
+}
+#body{
+    display:block;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #bebebe; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(2, 5, 46); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(2, 2, 2); 
+}
+
+
+
+                    </style>
+                    
+        </head>
+        
+<body>
+  <div id="body">
+      <div class="head">
+        SPOTIGENIUS
+      </div>
+      <div class="content">
+        <div class="overl">
+        <div class="menu">
+            <button class="opt_1" id="opt_artist" onclick="artist_click()">Artist</button>
+            <button class="opt_3" id="opt_playlist" onclick="playlist_click()">Playlist</button>
+            <img class="logo" src="/static/images/logo_site.png" alt="logo">
+        </div>
+    </div>
+        <div class="playlist" id="playlist_id">
+           
+        <form action="http://localhost:3000/application/playlist" method="GET" >
+            <div class="form row justify-content-around">
+                
+                <div class="col">
+                  <input type="text" id="input_1" class="form-control" name="url" placeholder="URL d'une playlist" required>
+                </div>
+                <div class="col">
+                    <button type="submit" class="sub" onclick="myFunction_1()">Rechercher</button>
+                    
+                </div>
+              </div>
+        </form>
+        <img src="/static/images/tuto_playlist.PNG" alt="tuto_playlist"  class="tuto_playlist"/>
+    </div>
+    <div class="artist" id="artist_id">
+        <form action="http://localhost:3000/application/artist" method="GET" >
+            <div class="form row justify-content-around">
+                
+                <div class="col">
+                  <input type="text" id="input_2" class="form-control" name="nom" placeholder="Nom d'un artist" required>
+                </div>
+                <div class="col">
+                    <button type="submit" class="sub" onclick="myFunction_2()">Rechercher</button>
+                </div>
+              </div>
+        </form>
+        <img src="https://media.giphy.com/media/3o72EX5QZ9N9d51dqo/giphy.gif" class="potichat" alt="potichat"  width=250/>
+    </div>
+      </div>
+    <footer class="up_title" >
+        <p class="fst-italic" style="color:rgb(167, 167, 167)">Made by : Jules Enguehard, Armand Dusart and Arthur Galerneau</p>
+    </footer>
+  </div>
+</body>
+<div id="gif">
+    <img src="https://media.giphy.com/media/YpqWbjNDq8y4DVu4BO/giphy.gif" alt="this slowpoke moves"  width=250/>
+</div>
+<script>
+    function artist_click(){
+        var x = document.getElementById("playlist_id");
+        var z = document.getElementById("artist_id");
+        
+        z.style.display = "inline-block";
+        x.style.display = "none";
+        
+        
+    }
+    function playlist_click(){
+        var x = document.getElementById("playlist_id");
+        var z = document.getElementById("artist_id");
+        
+        z.style.display = "none";
+        x.style.display = "inline-block";  
+ 
+    }
+    function myFunction_1() {
+            var gif = document.getElementById("gif");
+            var doc = document.getElementById("body");
+            if(document.getElementById("input_1").value.length == 0)
+                {
+                gif.style.display = "none"; 
+                }
+            else{
+                doc.style.display = "none";
+                document.body.style.backgroundImage = "none";
+                gif.style.display = "block";
+            }  
+            }
+            function myFunction_2() {
+            var gif = document.getElementById("gif");
+            var doc = document.getElementById("body");
+            if(document.getElementById("input_2").value.length == 0)
+                {
+                gif.style.display = "none"; 
+                }
+            else{
+                doc.style.display = "none";
+                document.body.style.backgroundImage = "none";
+                gif.style.display = "block";
+            }  
+            }
+            
+    $(".opt_3").click().focus();
+</script>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no" />
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>NLP Projet</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+                
+                
+                
+                <link rel="icon" href="/static/images/logo_site.png" />
+
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+            
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <style>
+@font-face {
+	font-family: "Font From File";
+	src: url('static/fonts/RobotoSlab-Black.ttf');
+}
+                            
+.titre{
+    padding-bottom: 3%; 
+    background-image: url("/static/images/fond.jpg");
+    background-size:100% 2404px;
+    color:rgb(233, 233, 233);
+    text-align: center;
+    font-size:60px;
+    font-family: "Font from File";
+}  
+#carouselExemple {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}      
+
+.navbar li,.navbar a.link_nav{
+    font-weight: 500;
+    font-size: 20px;
+    color:rgb(233, 233, 233);
+    text-decoration:none;
+} 
+div.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:11px 2%;
+    background-color: rgb(20, 20, 20);
+    padding-top:20px;
+    padding-bottom: 20px;
+    
+}
+.nav__links{
+    list-style:none;
+}
+.nav__links li {
+    display:inline-block;
+    padding:0px 40px;
+}
+.nav__links li a.link_nav {
+    transition: all 0.3s ease 0s;
+}
+.nav__links li a.link_nav:hover{
+    color: rgb(11, 22, 83);
+}
+a.app_b{
+    padding:9px 25px;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom right, rgb(33, 202, 90), rgb(210, 212, 76));
+    color:black;
+    border:none;
+    border-radius: 90px;
+    cursor:pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    opacity:1;
+   -webkit-transition: opacity 200ms linear;
+   -moz-transition: opacity 200ms linear;
+   -o-transition: opacity 200ms linear;
+   -ms-transition: opacity 200ms linear;
+   transition: opacity 200ms linear;
+}
+a.app_b:hover {
+        background-image: linear-gradient(to bottom right, rgb(210, 212, 76), rgb(33, 202, 90));
+        opacity:0.5;
+   -webkit-transition: opacity 200ms linear;
+   -moz-transition: opacity 200ms linear;
+   -o-transition: opacity 200ms linear;
+   -ms-transition: opacity 200ms linear;
+   transition: opacity 200ms linear;
+}
+body{
+    padding:0;
+    margin:0;
+    font-family:'Helvetica';
+    background-image: url("/static/images/fond.jpg");
+    background-size:100% 2404px;
+
+}
+
+.main_image{
+    max-width: 20%;
+}
+.body{
+    background-color:rgb(255, 255, 255);
+    border-radius:30px;
+    padding: 0px;
+    margin:50px 160px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.text{
+    color: rgb(24, 24, 24);
+    font-family: "Font from File";
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #bebebe; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(2, 5, 46); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(2, 2, 2); 
+}
+
+
+                    </style>
+                    
+        </head>
+        
+<body>
+        
+        <div class="titre mx-auto">
+                <img src="/static/images/fusion.png" class="main_image rounded mx-auto d-block" alt="logo_title">
+                <h2 class="text_title"> SPOTIGENIUS </h2>
+        </div>
+          
+        <div class="navbar">
+                <img class="logo" src="/static/images/logo_site.png" alt="logo" style="max-width: 5%;">
+                <nav>
+                        <ul class="nav__links">
+                                <li><a class="link_nav" href="http://localhost:3000/">Présentation</a></li>
+                                <li><a class="link_nav" href="https://github.com/Armand-Dusart/genius_nlp">Code</a></li>
+                        </ul>
+                </nav>
+                <a class="app_b" href="http://localhost:3000/application">Get Started</a>
+        </div>
+     
+    <div class="body">       
+        <div class="text mx-auto d-block">
+            <h3 class="display-3 text-center titreh2 fw-bold"> Technologies et API </h3>
+    </div>
+
+    <div id='carouselExemple' class="carousel slide shadow p-3 mb-5 bg-body rounded" data-ride="carousel" data-interval="3600">
+            <div class="carousel-inner">
+                    <div class="carousel-item active">
+                            <img src="/static/images/c_3.png" class="c_1 mx-auto d-block" alt="logo_title" >
+                    </div>
+                    <div class="carousel-item">
+                            <img src="/static/images/c_2.png" class="c_2 mx-auto d-block" alt="logo_title" >
+                    </div>
+                    <div class="carousel-item">
+                            <img src="/static/images/c_1.png" class="c_3 mx-auto d-block" alt="logo_title">
+                    </div>
+            </div>
+    </div>
+</div> 
+        
+        
+        
+        
+
+
+</body>
+<footer class="up_title"  style="background-color:rgb(51, 51, 51)">
+    <p class="fst-italic" style="color:rgb(167, 167, 167)">Made by : Jules Enguehard, Armand Dusart and Arthur Galerneau</p>
+</footer>
+</html>

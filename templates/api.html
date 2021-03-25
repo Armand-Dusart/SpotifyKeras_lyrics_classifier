@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>NLP Projet</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+                
+                <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+                
+                <link rel="icon" href="/static/images/logo_site.png" />
+
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+            
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <style>
+@font-face {
+	font-family: "Font From File";
+	src: url('static/fonts/RobotoSlab-Black.ttf');
+}
+                            
+.titre{
+    padding-bottom: 3%;
+    background-color: rgb(33, 202, 90); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, rgb(33, 202, 90), rgb(210, 212, 76));
+}  
+    
+
+.navbar li,.navbar a.link_nav{
+    font-weight: 500;
+    font-size: 20px;
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+} 
+div.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:11px 2%;
+    background-color: rgb(20, 20, 20);
+    padding-top:20px;
+    padding-bottom: 20px;
+    
+}
+.nav__links{
+    list-style:none;
+}
+.nav__links li {
+    display:inline-block;
+    padding:0px 40px;
+}
+.nav__links li a.link_nav {
+    transition: all 0.3s ease 0s;
+}
+.nav__links li a.link_nav:hover{
+    color: rgb(33, 202, 90);
+}
+a.app_b{
+    padding:9px 25px;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom right, rgb(33, 202, 90), rgb(210, 212, 76));
+    color:black;
+    border:none;
+    border-radius: 90px;
+    cursor:pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    opacity:1;
+   -webkit-transition: opacity 200ms linear;
+   -moz-transition: opacity 200ms linear;
+   -o-transition: opacity 200ms linear;
+   -ms-transition: opacity 200ms linear;
+   transition: opacity 200ms linear;
+}
+a.app_b:hover {
+        background-image: linear-gradient(to bottom right, rgb(210, 212, 76), rgb(33, 202, 90));
+        opacity:0.5;
+   -webkit-transition: opacity 200ms linear;
+   -moz-transition: opacity 200ms linear;
+   -o-transition: opacity 200ms linear;
+   -ms-transition: opacity 200ms linear;
+   transition: opacity 200ms linear;
+}
+body{
+    padding:0;
+    margin:0;
+    font-family:'Helvetica';
+}
+
+.main_image{
+    max-width: 20%;
+}
+.text_title{
+    text-align: center;
+    font-size:60px;
+    color:black;
+    font-family: "Font from File";
+}
+
+#gif{
+    display:none;
+    margin-left: 665px;
+    margin-top: 200px;
+    margin-bottom: 160px;
+}
+body{
+    padding:0;
+    padding-bottom: 100px;
+    margin:0;
+    background-color: white;
+    display:block;
+}
+
+
+
+
+
+                    </style>
+                    
+        </head>
+        
+<body>
+        <div  id="body">
+        
+        <div class="titre mx-auto">
+                <img src="/static/images/logo_site_title.png" class="main_image rounded mx-auto d-block" alt="logo_title">
+                <h2 class="text_title"> SPOTIGENIUS </h2>
+        </div>
+          
+        <div class="navbar">
+                <img class="logo" src="/static/images/logo_site.png" alt="logo" style="max-width: 5%;">
+                <nav>
+                        <ul class="nav__links">
+                                <li><a class="link_nav" href="http://localhost:3000/api">API</a></li>
+                                <li><a class="link_nav" href="http://localhost:3000/">Présentation</a></li>
+                                <li><a class="link_nav" href="https://github.com/Armand-Dusart/genius_nlp">Code</a></li>
+                        </ul>
+                </nav>
+                <a class="app_b" href="http://localhost:3000/application">Get Started</a>
+        </div>
+     
+                 
+        <form action="http://localhost:3000/chargement" method="post" >
+            <div class="form row justify-content-around">
+                <div class="col">
+                  <input type="text" id="input" class="form-control" name="url" placeholder="URL d'une playlist" required>
+                </div>
+                <div class="col">
+                    <button type="submit" id="sub" class="btn btn-dark" onclick="myFunction()">Rechercher</button>
+                    
+                </div>
+              </div>
+        </form>
+        <footer class="up_title"  style="background-color:rgb(51, 51, 51)">
+            <p class="fst-italic" style="color:rgb(167, 167, 167)">Made by : Jules Enguehard, Armand Dusart and Arthur Galerneau</p>
+        </footer>
+        </div>
+        <div id="gif">
+            <img src="https://media.giphy.com/media/YpqWbjNDq8y4DVu4BO/giphy.gif" alt="this slowpoke moves"  width=250/>
+        </div>
+        <script>
+        function myFunction() {
+            var x = document.getElementById("gif");
+            var y = document.getElementById("body");
+            if(document.getElementById("input").value.length == 0)
+                {
+                    x.style.display = "none";
+                    
+                }
+            else{
+                y.style.display = "none";
+                x.style.display = "block";
+            }  
+            }
+            
+                
+        </script>
+
+
+</body>
+
+
+</html>

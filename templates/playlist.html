@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no" />
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>NLP Projet</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+                
+                
+                
+                <link rel="icon" href="/static/images/logo_site.png" />
+                <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+            
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <style>
+@font-face {
+	font-family: "Font From File";
+	src: url("{{ url_for('static',filename='fonts/RobotoSlab-Black.ttf') }}");
+}
+body{
+    padding:0;
+    margin:0;
+    font-family:'Helvetica';
+    background-image: url("/static/images/fond.jpg");
+    background-size:100% 2404px;
+    background-repeat: repeat;
+}
+.head{
+    background-color: rgb(15, 16, 26);
+    padding:20px;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 6px 10px 0 rgba(0,0,0,0.19);
+    text-align: center;
+    font-size:40px;
+    color:rgb(214, 214, 214);
+    font-family: 'Font from File';
+}
+.logo{
+    margin-right: 30px;
+    margin-top: 15px;
+    max-width:5%;
+    padding-top:0px;
+    float: right;
+}
+.fixed_header{
+    width: 1000px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    
+}
+
+.fixed_header tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 500px;
+}
+
+.fixed_header thead tr {
+   display: block;
+   
+}
+
+.fixed_header thead {
+  background: rgb(15, 16, 26);
+  color:#fff;
+  font-family: 'Font from File';
+}
+
+.fixed_header th, .fixed_header td {
+  padding: 5px;
+  text-align: left;
+  width: 200px;
+  color:white;
+
+}
+.fixed_header tbody tr{
+    border: 3px solid white;  
+   border-color:#100f1a;
+   background-color:rgb(24, 24, 46);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #bebebe; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(2, 5, 46); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(2, 2, 2); 
+}
+.tableau{
+    margin-left: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.sub {
+    background-color: rgb(244, 242, 248);
+  border: none;
+  color: rgb(31, 30, 30);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 20px;
+  transition-duration: 0.4s;
+}
+
+.sub:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 6px 10px 0 rgba(0,0,0,0.19);
+}
+.sub:focus{
+    outline:none;
+}
+.titre{
+    font-size:20px;
+    text-align: center;
+    font-family: 'Font from File';
+}
+.line{
+    text-align:center;
+    font-size:18px;
+    font-family: helvetica;
+}
+.chart{
+  display:none;
+}
+.btn_date{
+  margin-top:30px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  color: rgb(31, 30, 30);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 20px 20px 0px 0px;
+  transition-duration: 0.4s;
+}
+.btn_date:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 6px 10px 0 rgba(0,0,0,0.19);
+}
+.btn_date:focus{
+    outline:none;
+    background-color: black;
+    color:white;
+}
+.bar{
+  margin-left: 460px;
+  margin-top:30px;
+}
+.title{
+  color: rgb(240, 240, 240);
+  font-family: "Font from File";
+  margin-left:0px;
+  margin-top:30px;
+}
+.scatter
+{
+  display:block;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 30px;
+}
+.wordcloud{
+  display:block;
+  margin-left: 200px;
+  margin-right: 200px;
+  height: 600px;
+  margin-top: 30px;
+}
+
+
+
+                    </style>
+                    
+        </head>
+        
+<body>
+  <div class="body">
+      <div class="head">SPOTIGENIUS</div>
+    
+    <div class="tableau">
+    <table class="fixed_header">
+        <thead>
+            <tr>
+              <th>Aristes</th>
+              <th>Nom</th>
+              <th>Album</th>
+              <th>Date de sortie</th>
+              <th>Lyrics</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i,artist,name,album,release in playlist[['artists','name','album','release_date']].reset_index().values %}
+            <tr>
+                <td>{{artist.replace("|",", ")}}</td>
+                <td>{{name}}</td>
+                <td>{{album}}</td>
+                <td>{{release}}</td>
+                <td><button class="sub" onclick="lyrics_click('{{i}}')">Show</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </div>
+  {% for i in playlist.index %}
+  <div id='{{i}}' style='display:none; margin-top:50px; margin-bottom:50px; background-color:white; color:rgb(31, 30, 30); margin-left:100px; margin-right:100px; border-radius:20px 20px 20px 20px;'>
+        <p class='titre'>Lyrics</p>
+        {% for line in playlist.loc[i,'lyrics'].split("\n") %}
+        <p class="line"> {{line}} </option>
+        {% endfor %}
+        <p  class='titre'>Lyrics preprocessed</p>
+        {% for line in playlist.loc[i,'lyrics_preprocessed'].split("\n") %}
+        <p class="line"> {{line}} </option>
+        {% endfor %}
+  </div>
+  {% endfor %}
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+  <div class="title display-4 text-center titreh2 fw-bold">Graphique du TOP10 des mots utilisés pour une année</div>
+  <div class="bar">
+    
+  {% for date in bar %}
+  <button class="btn_date" onclick="choice_date({{date}})">{{date}}</button>
+  {% endfor %}
+
+  {% for date in bar %}
+  <div class="chart" id='bargraph_{{date}}'>
+    <script>
+        var graphs = {{bar[date] | safe}};
+        var layout = {
+            title:'TOP 10 : {{date}}',
+            hovermode: true
+            };
+        Plotly.plot('bargraph_{{date}}',graphs,layout,{displayModeBar: false});
+    </script>
+  </div>
+  {% endfor %}
+</div>
+<div class="title display-4 text-center titreh2 fw-bold">Graphique de l'évolution d'un mot utilisé par année</div>
+  <div class="bar">
+  <input name="word" class="input_word" id="input_word"/>
+  <button class="sub" onclick="choice_word()">Rechercher</button>
+
+</div>
+<div class="scatter" id="scattergraph"></div>
+<div class="wordcloud" id="container"></div>
+    <footer class="up_title" >
+        <p class="fst-italic" style="color:rgb(167, 167, 167)">Made by : Jules Enguehard, Armand Dusart and Arthur Galerneau</p>
+    </footer>
+  </div>
+</body>
+<script>
+    function lyrics_click(s){
+        var i;
+        max = {{len}};
+        for (i = 0; i < max; i++) {
+            if (i.toString() == s){
+              if (document.getElementById(i).style.display == "block")
+              {
+                document.getElementById(i).style.display = "none";
+              }
+              else{
+                document.getElementById(i).style.display = "block";
+              }
+            }
+            else{
+                try{
+                    document.getElementById(i).style.display = "none";
+                }
+                finally{
+                    continue;
+                }
+                
+            }
+        } 
+    }
+    function choice_date(date){
+      {% for date in bar %}
+      document.getElementById('bargraph_{{date}}').style.display = "none";
+      {% endfor %}
+      document.getElementById('bargraph_'+date).style.display = "block";
+    }
+    
+    $(".btn_date").click()
+
+    var scatter = new Object;
+    {% for word in scatter %}
+    var scat  = {{scatter[word] | safe}};
+    scatter['{{word}}'] = scat;
+    {% endfor %}
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+    function choice_word(){ 
+      var input = "";
+      var input = document.getElementById("input_word").value;
+      try{
+        var layout = {
+       hovermode: true,
+       title:'Evolution par mot',
+       xaxis: {
+    dtick: 1,
+      }
+        };
+        Plotly.plot('scattergraph',scatter[input],layout,{displayModeBar: false});
+      }
+      catch{
+        alert('pas de données pour ce mot');
+      }
+    }
+    
+</script>
+</html>

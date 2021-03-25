@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>NLP Projet</title>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+                
+                <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+                
+                <link rel="icon" href="/static/images/logo_site.png" />
+                <script src="https://raw.githack.com/brython-dev/brython/master/www/src/brython.js"></script>
+                <script src="https://raw.githack.com/brython-dev/brython/master/www/src/brython_stdlib.js"></script>
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+            
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <style>
+                            
+
+body{
+    padding:0;
+    padding-bottom: 100px;
+    margin:0;
+    background-color: white;
+}
+.progress-bar{
+    font-family:Impact;
+    font-size:13px;
+    width:500px;
+    height:21px;
+    background-color:black;
+    border-radius: 1.5em;
+    color:rgb(0, 0, 0);
+    padding:3px;
+    margin : 10px 550px;
+    display:block;
+    box-sizing:border-box;
+}
+.progress-bar::before{
+    box-sizing:border-box;
+    content: attr(data-label);
+    height: 15px;
+    align-items:center;
+    position: absolute;
+    display:flex;
+    padding-left: 30px;
+    margin : 0;
+    width: calc(var(--width,0)*0.31%);
+    min-width: 3px;
+    max-width: calc(100% - 1000px - 90px) ;
+    background-color : white;
+    border-radius: 1em;
+}
+.progress-bar::after{
+    box-sizing:border-box;
+}
+footer{
+    background-color:rgb(51, 51, 51);
+    color : white;
+
+}
+img{
+    margin : 10px 665px;
+    margin-top: 200px;
+}
+                    </style>
+                    
+        </head>
+<body  onload="brython()">
+        
+        <div>
+            
+            <img src="https://media.giphy.com/media/YpqWbjNDq8y4DVu4BO/giphy.gif" alt="this slowpoke moves"  width=250/>
+            <div class="progress-bar" data-label="0%" style="--width: 0"></div>
+            <script>
+                function* fgen(){
+                    var i =0;
+                    while (i < {{len}}){
+                        
+                        yield i++;
+                    }
+                        
+                }
+                var len = {{len}};
+                const progressBar = document.getElementsByClassName('progress-bar')[0]
+                var gen =fgen()
+                var timer = setInterval(() => {
+                    var next = gen.next()
+                    const computedStyle =getComputedStyle(progressBar)
+                    const width = parseFloat(computedStyle.getPropertyValue('--width')) || 0
+                    if(next.done){
+                        window.location.replace("http://localhost:3000/");
+                    }
+                    else
+                    {   
+                        progressBar.style.setProperty('--width', next.value) 
+                        $(".progress-bar").attr('data-label',Math.round(width)+'%')
+                    }
+                },50)
+                
+                    
+            </script>          
+        </div>
+
+        
+        
+</body>
+
+</html>
