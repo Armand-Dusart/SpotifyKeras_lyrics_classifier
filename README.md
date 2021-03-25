@@ -1,6 +1,6 @@
 # Project : Classify lyrics by musical genre
 ## APP's first look :
-![plot_look](/markdown_img/word_ev.PNG)
+![plot_look](/markdown_img/app_first_look.PNG)
 
 ## The project contains 2 parts:
 -A graphical analysis of the evolution of words used by an artist over time.<p>
